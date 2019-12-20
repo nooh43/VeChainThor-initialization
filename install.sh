@@ -15,7 +15,7 @@
 clear
 
 # Some Unnecessary Variables, but they're here anyway
-version=V0.1.0
+version=V0.1.1
 oss="CentOS8"
 
 # Welcome Massage
@@ -95,6 +95,25 @@ echo -ne "PACKAGES INSTALLATION       [\e[1;30;1;1;47min progress\e[0m]\r"
     sudo yum -y install git nano wget
 } > logs/out3.log 2> logs/err3.log
 echo -ne "PACKAGES INSTALLATION       [\e[1;37;1;1;42m   +done   \e[0m]"
+echo
+
+# Step 4 : Installing Development Tools and C
+echo -ne "DEVTOOLS AND C INSTALLATION [\e[1;30;1;1;47min progress\e[0m]\r"
+{
+    sudo dnf -y groupinstall "Development Tools"
+} > logs/out4.log 2> logs/err4.log
+echo -ne "DEVTOOLS AND C INSTALLATION [\e[1;37;1;1;42m   +done   \e[0m]"
+echo
+
+# Step 5 : Installing GO
+echo -ne "GO INSTALLATION             [\e[1;30;1;1;47min progress\e[0m]\r"
+{
+    sudo wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xf go1.13.5.linux-amd64.tar.gz
+    sudo echo 'export PATH=$PATH:/usr/local/go/bin' >> /etc/profile
+    source /etc/profile
+} > logs/out4.log 2> logs/err4.log
+echo -ne "GO INSTALLATION             [\e[1;37;1;1;42m   +done   \e[0m]"
 echo
 
 # The End
