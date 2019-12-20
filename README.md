@@ -2,6 +2,7 @@
 Version : 0.1.3  
 One script that does it all, updates your system, enable required repos, install essential packages, and more..
 And most importantly it makes your system ready for VeChainThor node and also installs it!
+currently supports : Centos8, and more to come.
 
 ###### Features:
 - Update your system
