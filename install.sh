@@ -111,7 +111,6 @@ echo -ne "GO INSTALLATION             [\e[1;30;1;1;47min progress\e[0m]\r"
     sudo wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz
     sudo tar -C /usr/local -xf go1.13.5.linux-amd64.tar.gz
     sudo echo 'export PATH=$PATH:/usr/local/go/bin' >> /etc/profile
-    source /etc/profile
 } > logs/out5.log 2> logs/err5.log
 echo -ne "GO INSTALLATION             [\e[1;37;1;1;42m   +done   \e[0m]"
 echo
@@ -158,10 +157,10 @@ echo -ne "DOWNLOADING THE NODE        [\e[1;37;1;1;42m   +done   \e[0m]"
 echo
 
 # Step 7 : Dependency management
+cd ~/go/thor
+source /etc/profile
 echo -ne "DEPENDENCY MANAGEMENT       [\e[1;30;1;1;47min progress\e[0m]\r"
 {
-    cd ~/go/thor
-    source /etc/profile
     mkdir logs
     sudo make dep
 } > logs/out7.log 2> logs/err7.log
