@@ -163,7 +163,7 @@ echo -ne "BUILDING THE NODE           [\e[1;30;1;1;47min progress\e[0m]\r"
 {
     cd ~/go/thor
     sudo make all
-} > logs/out7.log 2> logs/err7.log
+} > logs/out8.log 2> logs/err8.log
 echo -ne "BUILDING THE NODE           [\e[1;37;1;1;42m   +done   \e[0m]"
 echo
 
