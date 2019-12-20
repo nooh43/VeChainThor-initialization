@@ -15,7 +15,7 @@
 clear
 
 # Some Unnecessary Variables, but they're here anyway
-version=V0.1.5
+version=V0.1.6
 oss="CentOS8"
 
 # Welcome Massage
@@ -161,6 +161,7 @@ echo
 echo -ne "DEPENDENCY MANAGEMENT       [\e[1;30;1;1;47min progress\e[0m]\r"
 {
     cd ~/go/thor
+    source /etc/profile
     mkdir logs
     sudo make dep
 } > logs/out7.log 2> logs/err7.log
