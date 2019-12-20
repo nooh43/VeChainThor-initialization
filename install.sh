@@ -15,7 +15,7 @@
 clear
 
 # Some Unnecessary Variables, but they're here anyway
-version=V0.1.4
+version=V0.1.5
 oss="CentOS8"
 
 # Welcome Massage
@@ -114,6 +114,14 @@ echo -ne "GO INSTALLATION             [\e[1;30;1;1;47min progress\e[0m]\r"
     source /etc/profile
 } > logs/out5.log 2> logs/err5.log
 echo -ne "GO INSTALLATION             [\e[1;37;1;1;42m   +done   \e[0m]"
+echo
+
+# Step 5.5 : Cleaning
+echo -ne "CLEANING THE TEMP           [\e[1;30;1;1;47min progress\e[0m]\r"
+{
+    sudo rm go1.13.5.linux-amd64.tar.gz
+} > logs/out55.log 2> logs/err55.log
+echo -ne "CLEANING THE TEMP           [\e[1;37;1;1;42m   +done   \e[0m]"
 echo
 
 # Making sure the user wants to install thor
